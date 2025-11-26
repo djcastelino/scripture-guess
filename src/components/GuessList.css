@@ -29,6 +29,11 @@
   font-weight: 500;
 }
 
+.guess-item.correct {
+  background: #d4edda;
+  border-left: 3px solid #28a745;
+}
+
 .remaining-guesses {
   margin: 0;
   text-align: center;

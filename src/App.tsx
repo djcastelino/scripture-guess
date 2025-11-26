@@ -175,6 +175,8 @@ function App() {
         <GuessList 
           guesses={gameState.guesses} 
           maxGuesses={MAX_GUESSES}
+          isComplete={gameState.isComplete}
+          isWon={gameState.isWon}
         />
 
         {gameState.isComplete && (
