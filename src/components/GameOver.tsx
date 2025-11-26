@@ -64,7 +64,7 @@ export default function GameOver({ isWon, character, guessCount, puzzleNumber, g
       </div>
 
       <button onClick={handleShare} className="share-button">
-        📤 Share Result
+        📤 Share Result & Invite Friends
       </button>
 
       <p className="next-puzzle">
