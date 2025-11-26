@@ -1,0 +1,141 @@
+.game-over {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-banner {
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.result-banner.won {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.result-banner.lost {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.result-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.result-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.result-subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.character-info {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #f8f9ff;
+  border-radius: 8px;
+}
+
+.character-name {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.character-role {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: #764ba2;
+  font-weight: 500;
+}
+
+.character-details {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.character-details p {
+  margin: 0.75rem 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+.character-details strong {
+  color: #667eea;
+}
+
+.share-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 1.5rem 0;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.share-button:active {
+  transform: translateY(0);
+}
+
+.next-puzzle {
+  margin: 1rem 0 0 0;
+  color: #667eea;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .game-over {
+    padding: 1.5rem;
+  }
+  
+  .result-icon {
+    font-size: 2.5rem;
+  }
+  
+  .result-title {
+    font-size: 1.6rem;
+  }
+  
+  .character-name {
+    font-size: 1.5rem;
+  }
+  
+  .share-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
