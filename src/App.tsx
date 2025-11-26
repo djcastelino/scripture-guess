@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { GameState } from './types';
+import type { GameState, Character } from './types';
 import { getDailyCharacter } from './data/characters';
 import { loadGameState, saveGameState, isNewDay, updateStats } from './utils/storage';
 import Header from './components/Header';
@@ -7,6 +7,7 @@ import ClueDisplay from './components/ClueDisplay';
 import GuessInput from './components/GuessInput';
 import GuessList from './components/GuessList';
 import GameOver from './components/GameOver';
+import TestMode from './components/TestMode';
 import './App.css';
 
 const MAX_GUESSES = 6;
@@ -24,6 +25,7 @@ function App() {
     lastPlayedDate: '',
   });
   const [loading, setLoading] = useState(true);
+  const [testMode, setTestMode] = useState(false);
 
   useEffect(() => {
     initGame();
@@ -89,7 +91,7 @@ function App() {
       isWon: isCorrect,
     };
 
-    if (isComplete) {
+    if (isComplete && !testMode) {
       updateStats(isCorrect, newGuesses.length);
       const stats = JSON.parse(localStorage.getItem('biblele-stats') || '{}');
       newState.currentStreak = stats.currentStreak || 0;
@@ -99,7 +101,9 @@ function App() {
     }
 
     setGameState(newState);
-    saveGameState(newState);
+    if (!testMode) {
+      saveGameState(newState);
+    }
   }
 
   function getPuzzleNumber(): number {
@@ -108,6 +112,18 @@ function App() {
     const diffTime = Math.abs(today.getTime() - startDate.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     return diffDays;
+  }
+
+  function handleTestCharacter(character: Character) {
+    setTestMode(true);
+    const newState: GameState = {
+      ...gameState,
+      targetCharacter: character,
+      guesses: [],
+      isComplete: false,
+      isWon: false,
+    };
+    setGameState(newState);
   }
 
   if (loading) {
@@ -134,6 +150,15 @@ function App() {
       <Header />
 
       <main className="main-content">
+        {testMode && (
+          <div className="test-mode-banner">
+            🧪 Test Mode Active - Stats won't be saved
+            <button onClick={() => { setTestMode(false); initGame(); }} className="exit-test">
+              Exit Test Mode
+            </button>
+          </div>
+        )}
+
         <ClueDisplay 
           character={gameState.targetCharacter} 
           visibleClueCount={visibleClues}
@@ -161,6 +186,11 @@ function App() {
           />
         )}
       </main>
+
+      <TestMode 
+        onSelectCharacter={handleTestCharacter}
+        currentCharacterId={gameState.targetCharacter?.id || null}
+      />
     </div>
   );
 }
