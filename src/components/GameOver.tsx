@@ -40,8 +40,7 @@ export default function GameOver({ isWon, character, guessCount, puzzleNumber, g
         ) : (
           <>
             <div className="result-icon">😔</div>
-            <h2 className="result-title">Better luck tomorrow!</h2>
-            <p className="result-subtitle">The answer was:</p>
+            <h2 className="result-title">The answer was:</h2>
           </>
         )}
       </div>
