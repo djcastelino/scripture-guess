@@ -144,7 +144,13 @@ function App() {
     );
   }
 
-  const visibleClues = getVisibleClueCount(gameState.guesses.length);
+  // If game is won, show clues based on guesses BEFORE the correct one
+  // If game is lost, show all clues
+  const visibleClues = gameState.isComplete && gameState.isWon
+    ? getVisibleClueCount(gameState.guesses.length - 1)
+    : gameState.isComplete && !gameState.isWon
+    ? 6
+    : getVisibleClueCount(gameState.guesses.length);
 
   return (
     <div className="app">
