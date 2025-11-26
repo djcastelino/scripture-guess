@@ -1,6 +1,6 @@
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  color: #333;
   padding: 1.5rem 1rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -36,11 +36,12 @@
 .streak {
   margin-top: 0.75rem;
   font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   padding: 0.4rem 1rem;
   border-radius: 20px;
   display: inline-block;
   font-weight: 500;
+  color: #333;
 }
 
 @media (max-width: 480px) {

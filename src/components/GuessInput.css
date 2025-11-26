@@ -12,7 +12,7 @@
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
-  border: 2px solid #667eea;
+  border: 2px solid #f6a04d;
   border-radius: 8px;
   outline: none;
   transition: all 0.3s ease;
@@ -20,8 +20,8 @@
 }
 
 .guess-input:focus {
-  border-color: #764ba2;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #fda085;
+  box-shadow: 0 0 0 3px rgba(246, 160, 77, 0.1);
 }
 
 .guess-input:disabled {
@@ -36,7 +36,7 @@
   left: 0;
   right: 0;
   background: white;
-  border: 2px solid #667eea;
+  border: 2px solid #f6a04d;
   border-top: none;
   border-radius: 0 0 8px 8px;
   list-style: none;
@@ -60,8 +60,8 @@
 }
 
 .suggestion-item:hover {
-  background: #f0f4ff;
-  color: #667eea;
+  background: #fff8f0;
+  color: #f6a04d;
 }
 
 @media (max-width: 480px) {

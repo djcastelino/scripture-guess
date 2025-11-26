@@ -60,14 +60,14 @@
 .character-name {
   margin: 0 0 0.5rem 0;
   font-size: 1.8rem;
-  color: #667eea;
+  color: #f6a04d;
   font-weight: 700;
 }
 
 .character-role {
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
-  color: #764ba2;
+  color: #fda085;
   font-weight: 500;
 }
 
@@ -84,12 +84,12 @@
 }
 
 .character-details strong {
-  color: #667eea;
+  color: #f6a04d;
 }
 
 .share-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  color: #333;
   border: none;
   padding: 1rem 2rem;
   font-size: 1.1rem;
@@ -102,7 +102,7 @@
 
 .share-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px rgba(246, 160, 77, 0.3);
 }
 
 .share-button:active {
@@ -111,7 +111,7 @@
 
 .next-puzzle {
   margin: 1rem 0 0 0;
-  color: #667eea;
+  color: #f6a04d;
   font-size: 1.1rem;
   font-weight: 500;
 }

@@ -13,7 +13,7 @@ export default defineConfig({
         name: 'Biblele - Daily Bible Character Game',
         short_name: 'Biblele',
         description: 'Guess the Bible character from progressive clues. A new puzzle every day!',
-        theme_color: '#667eea',
+        theme_color: '#f6a04d',
         background_color: '#ffffff',
         display: 'standalone',
         icons: [

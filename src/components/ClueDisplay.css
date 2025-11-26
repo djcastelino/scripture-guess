@@ -9,7 +9,7 @@
 .mystery-title {
   margin: 0 0 1.5rem 0;
   font-size: 1.5rem;
-  color: #667eea;
+  color: #f6a04d;
   text-align: center;
   font-weight: 700;
 }
@@ -37,8 +37,8 @@
 }
 
 .clue-item.visible {
-  background: #f0f4ff;
-  border-left: 3px solid #667eea;
+  background: #fff8f0;
+  border-left: 3px solid #f6a04d;
 }
 
 .clue-item.locked {
@@ -49,7 +49,7 @@
 
 .clue-number {
   font-weight: 700;
-  color: #667eea;
+  color: #f6a04d;
   min-width: 1.5rem;
 }
 
