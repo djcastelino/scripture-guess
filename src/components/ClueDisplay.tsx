@@ -9,7 +9,7 @@ interface ClueDisplayProps {
 export default function ClueDisplay({ character, visibleClueCount }: ClueDisplayProps) {
   return (
     <div className="clue-display">
-      <h2 className="mystery-title">Guess Who? 🤔</h2>
+      <h2 className="mystery-title">Today's Puzzle</h2>
       
       <div className="clues-container">
         <h3 className="clues-heading">Clues:</h3>

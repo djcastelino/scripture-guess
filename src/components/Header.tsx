@@ -20,7 +20,7 @@ export default function Header({ onStatsClick }: HeaderProps) {
             <span className="icon">🙏</span>
             BIBLELE
           </h1>
-          <p className="subtitle">Daily Bible Character Game</p>
+          <p className="subtitle">Daily Challenge</p>
           {stats.currentStreak > 0 && (
             <div className="streak">
               🔥 {stats.currentStreak} day streak
