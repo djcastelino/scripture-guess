@@ -8,6 +8,7 @@ import GuessInput from './components/GuessInput';
 import GuessList from './components/GuessList';
 import GameOver from './components/GameOver';
 import TestMode from './components/TestMode';
+import Stats from './components/Stats';
 import './App.css';
 
 const MAX_GUESSES = 6;
@@ -26,6 +27,7 @@ function App() {
   });
   const [loading, setLoading] = useState(true);
   const [testMode, setTestMode] = useState(false);
+  const [showStats, setShowStats] = useState(false);
 
   useEffect(() => {
     initGame();
@@ -154,7 +156,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header onStatsClick={() => setShowStats(true)} />
 
       <main className="main-content">
         {testMode && (
@@ -199,6 +201,11 @@ function App() {
       <TestMode 
         onSelectCharacter={handleTestCharacter}
         currentCharacterId={gameState.targetCharacter?.id || null}
+      />
+
+      <Stats 
+        isOpen={showStats}
+        onClose={() => setShowStats(false)}
       />
     </div>
   );
