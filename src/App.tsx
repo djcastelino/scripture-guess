@@ -71,9 +71,10 @@ function App() {
 
   function getVisibleClueCount(guessCount: number): number {
     if (guessCount === 0) return 1;
-    if (guessCount === 1) return 3;
-    if (guessCount === 2) return 4;
-    if (guessCount === 3) return 5;
+    if (guessCount === 1) return 2;
+    if (guessCount === 2) return 3;
+    if (guessCount === 3) return 4;
+    if (guessCount === 4) return 5;
     return 6;
   }
 
