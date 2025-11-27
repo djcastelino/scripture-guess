@@ -87,7 +87,16 @@
   color: #f6a04d;
 }
 
-.share-button {
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.share-button,
+.stats-button {
   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
   color: #333;
   border: none;
@@ -97,15 +106,18 @@
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin: 1.5rem 0;
+  flex: 1;
+  min-width: 160px;
 }
 
-.share-button:hover {
+.share-button:hover,
+.stats-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(246, 160, 77, 0.3);
 }
 
-.share-button:active {
+.share-button:active,
+.stats-button:active {
   transform: translateY(0);
 }
 
@@ -133,9 +145,16 @@
     font-size: 1.5rem;
   }
   
-  .share-button {
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .share-button,
+  .stats-button {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
+    width: 100%;
+    min-width: auto;
   }
 }
 

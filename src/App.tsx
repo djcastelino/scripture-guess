@@ -194,14 +194,18 @@ function App() {
             guessCount={gameState.guesses.length}
             puzzleNumber={getPuzzleNumber()}
             guesses={gameState.guesses}
+            onStatsClick={() => setShowStats(true)}
           />
         )}
       </main>
 
-      <TestMode 
-        onSelectCharacter={handleTestCharacter}
-        currentCharacterId={gameState.targetCharacter?.id || null}
-      />
+      {/* Test Mode - hidden in production, only shows if ?test=true in URL */}
+      {new URLSearchParams(window.location.search).get('test') === 'true' && (
+        <TestMode 
+          onSelectCharacter={handleTestCharacter}
+          currentCharacterId={gameState.targetCharacter?.id || null}
+        />
+      )}
 
       <Stats 
         isOpen={showStats}

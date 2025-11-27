@@ -8,9 +8,10 @@ interface GameOverProps {
   guessCount: number;
   puzzleNumber: number;
   guesses: string[];
+  onStatsClick: () => void;
 }
 
-export default function GameOver({ isWon, character, guessCount, puzzleNumber, guesses }: GameOverProps) {
+export default function GameOver({ isWon, character, guessCount, puzzleNumber, guesses, onStatsClick }: GameOverProps) {
   const handleShare = () => {
     const shareText = generateShareText(isWon, guesses, puzzleNumber);
     
@@ -62,9 +63,15 @@ export default function GameOver({ isWon, character, guessCount, puzzleNumber, g
         </div>
       </div>
 
-      <button onClick={handleShare} className="share-button">
-        📤 Share Result & Invite Friends
-      </button>
+      <div className="action-buttons">
+        <button onClick={handleShare} className="share-button">
+          📤 Share Result & Invite Friends
+        </button>
+
+        <button onClick={onStatsClick} className="stats-button">
+          📊 View Stats
+        </button>
+      </div>
 
       <p className="next-puzzle">
         Come back tomorrow for a new puzzle! 🙏
