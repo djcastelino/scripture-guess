@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import type { GameState, Character } from './types';
 import { getDailyCharacter } from './data/characters';
 import { loadGameState, saveGameState, isNewDay, updateStats } from './utils/storage';
+import { initGA, trackPageView, trackGameStart, trackGameComplete, trackGuess, trackCharacterView } from './utils/analytics';
 import Header from './components/Header';
 import ClueDisplay from './components/ClueDisplay';
 import GuessInput from './components/GuessInput';
@@ -30,6 +31,10 @@ function App() {
   const [showStats, setShowStats] = useState(false);
 
   useEffect(() => {
+    // Initialize Google Analytics
+    initGA();
+    trackPageView('/');
+    
     initGame();
   }, []);
 
@@ -45,6 +50,10 @@ function App() {
 
       if (shouldStartNewGame) {
         const dailyCharacter = getDailyCharacter();
+        
+        // Track new game start
+        trackGameStart();
+        trackCharacterView(dailyCharacter.name, dailyCharacter.difficulty);
         
         const newState: GameState = {
           targetCharacter: dailyCharacter,
@@ -87,6 +96,9 @@ function App() {
     const newGuesses = [...gameState.guesses, guessName];
     const isComplete = isCorrect || newGuesses.length >= MAX_GUESSES;
 
+    // Track the guess
+    trackGuess(isCorrect, newGuesses.length);
+
     const newState: GameState = {
       ...gameState,
       guesses: newGuesses,
@@ -96,6 +108,10 @@ function App() {
 
     if (isComplete && !testMode) {
       updateStats(isCorrect, newGuesses.length);
+      
+      // Track game completion
+      trackGameComplete(isCorrect, newGuesses.length);
+      
       const stats = JSON.parse(localStorage.getItem('biblele-stats') || '{}');
       newState.currentStreak = stats.currentStreak || 0;
       newState.maxStreak = stats.maxStreak || 0;

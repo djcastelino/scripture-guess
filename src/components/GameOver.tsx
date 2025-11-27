@@ -1,5 +1,6 @@
 import type { Character } from '../types';
 import { generateShareText } from '../utils/storage';
+import { trackShare } from '../utils/analytics';
 import './GameOver.css';
 
 interface GameOverProps {
@@ -14,6 +15,9 @@ interface GameOverProps {
 export default function GameOver({ isWon, character, guessCount, puzzleNumber, guesses, onStatsClick }: GameOverProps) {
   const handleShare = () => {
     const shareText = generateShareText(isWon, guesses, puzzleNumber);
+    
+    // Track share event
+    trackShare();
     
     if (navigator.share) {
       navigator.share({

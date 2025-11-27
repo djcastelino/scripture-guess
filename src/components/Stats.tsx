@@ -1,4 +1,5 @@
 import { getStats } from '../utils/storage';
+import { trackStatsView } from '../utils/analytics';
 import './Stats.css';
 
 interface StatsProps {
@@ -8,6 +9,9 @@ interface StatsProps {
 
 export default function Stats({ isOpen, onClose }: StatsProps) {
   if (!isOpen) return null;
+
+  // Track stats view
+  trackStatsView();
 
   const stats = getStats();
   const winRate = stats.gamesPlayed > 0 
