@@ -34,12 +34,17 @@ export default function GuessInput({ onGuess, disabled }: GuessInputProps) {
       setInput('');
       setSuggestions([]);
       setShowSuggestions(false);
+      // Prevent any browser validation messages
+      if (inputRef.current) {
+        inputRef.current.setCustomValidity('');
+      }
     }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && input.trim()) {
       e.preventDefault();
+      e.stopPropagation();
       if (suggestions.length > 0) {
         handleSubmit(suggestions[0]);
       } else {
@@ -50,37 +55,41 @@ export default function GuessInput({ onGuess, disabled }: GuessInputProps) {
 
   return (
     <div className="guess-input-container">
-      <div className="input-wrapper">
-        <input
-          ref={inputRef}
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Type character name..."
-          disabled={disabled}
-          className="guess-input"
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck="false"
-          aria-autocomplete="none"
-        />
-        
-        {showSuggestions && suggestions.length > 0 && (
-          <ul className="suggestions-list">
-            {suggestions.map((name) => (
-              <li
-                key={name}
-                onClick={() => handleSubmit(name)}
-                className="suggestion-item"
-              >
-                {name}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <form onSubmit={(e) => e.preventDefault()} noValidate>
+        <div className="input-wrapper">
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Type character name..."
+            disabled={disabled}
+            className="guess-input"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+            aria-autocomplete="none"
+            data-form-type="other"
+            data-lpignore="true"
+          />
+          
+          {showSuggestions && suggestions.length > 0 && (
+            <ul className="suggestions-list">
+              {suggestions.map((name) => (
+                <li
+                  key={name}
+                  onClick={() => handleSubmit(name)}
+                  className="suggestion-item"
+                >
+                  {name}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </form>
     </div>
   );
 }
