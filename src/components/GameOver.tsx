@@ -74,7 +74,7 @@ export default function GameOver({ isWon, character, guessCount, puzzleNumber, g
       </div>
 
       <p className="next-puzzle">
-        Come back tomorrow for a new puzzle! 🙏
+        Come back tomorrow for a new puzzle!
       </p>
     </div>
   );

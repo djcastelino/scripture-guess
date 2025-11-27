@@ -9,7 +9,6 @@ export default function Header() {
       <div className="header-content">
         <div className="header-center">
           <h1 className="title">
-            <span className="icon">🙏</span>
             BIBLELE
           </h1>
           <p className="subtitle">Daily Challenge</p>
