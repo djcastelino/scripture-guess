@@ -156,7 +156,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header onStatsClick={() => setShowStats(true)} />
+      <Header />
 
       <main className="main-content">
         {testMode && (
