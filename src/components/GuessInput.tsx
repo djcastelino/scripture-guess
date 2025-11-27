@@ -61,6 +61,10 @@ export default function GuessInput({ onGuess, disabled }: GuessInputProps) {
           disabled={disabled}
           className="guess-input"
           autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck="false"
+          aria-autocomplete="none"
         />
         
         {showSuggestions && suggestions.length > 0 && (
