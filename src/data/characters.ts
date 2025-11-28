@@ -25,12 +25,12 @@ export const CHARACTERS: Character[] = [
     testament: "Old",
     difficulty: "easy",
     clues: [
-      "Started as a shepherd boy watching sheep",
-      "Defeated a giant warrior in single combat",
-      "Became the second king of Israel",
-      "Was a skilled musician who played the harp",
-      "Used only a sling and stones as weapons",
-      "Wrote many psalms and poems of worship"
+      "Started as a humble shepherd in their youth",
+      "Was skilled at playing musical instruments",
+      "Faced a seemingly impossible challenge with courage",
+      "Used an unconventional weapon in famous victory",
+      "Became the most celebrated king of Israel",
+      "Defeated the giant Goliath with a sling and stone"
     ],
     books: ["1 Samuel", "2 Samuel", "1 Kings", "Psalms"],
     role: "King & Psalmist",
@@ -42,12 +42,12 @@ export const CHARACTERS: Character[] = [
     testament: "Old",
     difficulty: "easy",
     clues: [
-      "Built a massive wooden vessel over many years",
-      "Saved animals from a catastrophic disaster",
-      "Received specific building instructions from God",
-      "The vessel had three decks and many rooms",
-      "Sent out a dove to find dry land",
-      "Saw a rainbow as a sign of promise"
+      "Was considered righteous in a corrupt generation",
+      "Received unusual instructions for a massive construction project",
+      "Gathered many pairs of creatures for preservation",
+      "Built a large vessel to survive catastrophic judgment",
+      "Sent out birds to search for dry ground",
+      "Survived the great flood and saw God's rainbow covenant"
     ],
     books: ["Genesis"],
     role: "Patriarch",
@@ -76,12 +76,12 @@ export const CHARACTERS: Character[] = [
     testament: "Old",
     difficulty: "easy",
     clues: [
-      "Was the favorite son of his father",
-      "Received a special colorful garment",
-      "Was sold into slavery by jealous siblings",
-      "Could interpret dreams with accuracy",
-      "Rose to become second-in-command of Egypt",
-      "Eventually forgave his brothers"
+      "Was deeply loved by their father but resented by siblings",
+      "Had prophetic dreams that angered their family",
+      "Was betrayed and sold into slavery",
+      "Received a special colorful garment from their father",
+      "Rose to power in Egypt through dream interpretation",
+      "Eventually forgave the brothers who betrayed them"
     ],
     books: ["Genesis"],
     role: "Patriarch & Leader",
@@ -93,12 +93,12 @@ export const CHARACTERS: Character[] = [
     testament: "Old",
     difficulty: "easy",
     clues: [
-      "Son of David and Bathsheba",
-      "Asked God for wisdom instead of wealth",
-      "Built the first temple in Jerusalem",
-      "Famous for a judgment involving two mothers and a baby",
-      "Wrote many proverbs and songs",
-      "Had 700 wives and 300 concubines"
+      "Inherited the throne from a famous warrior king",
+      "Asked God for wisdom rather than riches or long life",
+      "Made a famous judgment involving a disputed baby",
+      "Built the magnificent temple in Jerusalem",
+      "Wrote thousands of proverbs and songs",
+      "Son of David and Bathsheba, known as the wisest king"
     ],
     books: ["1 Kings", "2 Chronicles", "Proverbs", "Ecclesiastes"],
     role: "King",
@@ -127,12 +127,12 @@ export const CHARACTERS: Character[] = [
     testament: "Old",
     difficulty: "easy",
     clues: [
-      "Had supernatural physical strength from birth",
-      "Took a Nazirite vow never to cut his hair",
-      "Fell in love with a woman named Delilah",
-      "Killed a lion with his bare hands",
-      "Was betrayed and captured by enemies",
-      "Destroyed a temple in his final act"
+      "Was dedicated to God before birth with special vows",
+      "Possessed extraordinary physical abilities",
+      "Defeated a dangerous predator with bare hands",
+      "Had a secret weakness connected to their appearance",
+      "Fell in love with Delilah who betrayed them",
+      "Destroyed a Philistine temple - power was in uncut hair"
     ],
     books: ["Judges"],
     role: "Judge",
@@ -144,12 +144,12 @@ export const CHARACTERS: Character[] = [
     testament: "Old",
     difficulty: "easy",
     clues: [
-      "The very first human being created",
-      "Lived in a perfect garden paradise",
-      "Was given the task of naming all animals",
-      "Had a companion made from his rib",
-      "Ate forbidden fruit from a special tree",
-      "Was expelled from paradise for disobedience"
+      "Lived in a perfect garden with complete freedom",
+      "Was given dominion over all living creatures",
+      "Named every animal in creation",
+      "Received a companion made from their own body",
+      "Disobeyed by eating forbidden fruit",
+      "The very first human being God created"
     ],
     books: ["Genesis"],
     role: "First Man",
@@ -161,12 +161,12 @@ export const CHARACTERS: Character[] = [
     testament: "Old",
     difficulty: "easy",
     clues: [
-      "Tried to run away from God's assignment",
-      "Boarded a ship heading in the opposite direction",
-      "Was thrown overboard during a storm",
-      "Swallowed by a giant sea creature",
-      "Spent three days inside the creature",
-      "Eventually preached to the city of Nineveh"
+      "Tried to flee from a divine assignment",
+      "Boarded a ship sailing away from their destination",
+      "Was thrown overboard during a violent storm",
+      "Had an extraordinary three-day survival experience",
+      "Was swallowed by a giant sea creature",
+      "Eventually preached repentance to Nineveh"
     ],
     books: ["Jonah"],
     role: "Prophet",
@@ -197,12 +197,12 @@ export const CHARACTERS: Character[] = [
     testament: "New",
     difficulty: "easy",
     clues: [
-      "Originally worked as a fisherman",
-      "One of Jesus's closest three disciples",
-      "Had a brother named Andrew",
-      "Denied knowing Jesus three times",
-      "Jesus gave him a new name meaning 'rock'",
-      "Became the leader of the early church"
+      "Was part of Jesus's inner circle of closest followers",
+      "Made bold declarations but sometimes acted impulsively",
+      "Had a brother who was also a disciple",
+      "Was given a new name by Jesus meaning 'rock'",
+      "Denied knowing Jesus three times before the rooster crowed",
+      "Originally a fisherman, became leader of the early church"
     ],
     books: ["Matthew", "Mark", "Luke", "John", "Acts"],
     role: "Apostle",
@@ -231,12 +231,12 @@ export const CHARACTERS: Character[] = [
     testament: "New",
     difficulty: "easy",
     clues: [
-      "Was a young virgin from Nazareth",
-      "Visited by an angel named Gabriel",
-      "Gave birth in a stable in Bethlehem",
-      "Was engaged to a carpenter",
-      "Witnessed her son's crucifixion",
-      "Mother of Jesus Christ"
+      "Was a young woman living in Nazareth",
+      "Received a life-changing visit from an angel",
+      "Was engaged to a carpenter named Joseph",
+      "Gave birth in unusual circumstances in Bethlehem",
+      "Witnessed her son's crucifixion and resurrection",
+      "Virgin mother of Jesus Christ, visited by Gabriel"
     ],
     books: ["Matthew", "Luke", "John", "Acts"],
     role: "Mother of Jesus",
@@ -248,12 +248,12 @@ export const CHARACTERS: Character[] = [
     testament: "New",
     difficulty: "easy",
     clues: [
-      "Lived in the wilderness eating locusts and honey",
-      "Wore clothing made of camel's hair",
-      "Baptized people in the Jordan River",
-      "Prepared the way for the Messiah",
-      "Baptized Jesus in the river",
-      "Was beheaded by King Herod"
+      "Lived an austere lifestyle in the wilderness",
+      "Preached a message of repentance and preparation",
+      "Baptized people in the Jordan River for repentance",
+      "Had unusual clothing and diet of locusts and honey",
+      "Baptized Jesus and saw the Spirit descend like a dove",
+      "Was beheaded by King Herod at Herodias's request"
     ],
     books: ["Matthew", "Mark", "Luke", "John"],
     role: "Prophet",
@@ -265,12 +265,12 @@ export const CHARACTERS: Character[] = [
     testament: "New",
     difficulty: "easy",
     clues: [
-      "Was one of the twelve disciples",
-      "Served as treasurer for the group",
-      "Betrayed someone for thirty pieces of silver",
-      "Identified his target with a kiss",
-      "Later felt deep remorse for his actions",
-      "Died by hanging himself"
+      "Was one of the twelve closest followers",
+      "Managed the finances for the group",
+      "Made a secret deal with religious authorities",
+      "Identified their target with a kiss in a garden",
+      "Betrayed Jesus for thirty pieces of silver",
+      "Felt deep remorse and died by hanging himself"
     ],
     books: ["Matthew", "Mark", "Luke", "John"],
     role: "Apostle (betrayer)",
@@ -282,12 +282,12 @@ export const CHARACTERS: Character[] = [
     testament: "New",
     difficulty: "easy",
     clues: [
-      "Was one of the twelve disciples",
-      "Refused to believe without physical proof",
-      "Wanted to touch the wounds himself",
-      "Said he would die with Jesus",
-      "Eventually believed after seeing evidence",
-      "Known for his initial skepticism"
+      "Was one of the twelve disciples of Jesus",
+      "Expressed willingness to die alongside Jesus",
+      "Was absent when Jesus first appeared to the disciples",
+      "Insisted on physical proof before believing a report",
+      "Wanted to touch the wounds to confirm the resurrection",
+      "Known as 'Doubting Thomas' until he saw and believed"
     ],
     books: ["Matthew", "Mark", "Luke", "John"],
     role: "Apostle",
