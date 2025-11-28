@@ -488,12 +488,12 @@ export const CHARACTERS: Character[] = [
     testament: "Old",
     difficulty: "medium",
     clues: [
-      "Was described as blameless and upright",
-      "Lost all his children in one day",
-      "Lost all his wealth and possessions",
-      "Suffered from painful sores all over",
-      "Three friends came to comfort him",
-      "God restored double what he had lost"
+      "Was considered the most righteous person in their land",
+      "Had immense wealth in livestock and servants",
+      "Became the subject of a test between God and Satan",
+      "Lost all possessions and family in a single day",
+      "Sat in ashes covered with painful sores",
+      "Three friends debated the cause of his suffering"
     ],
     books: ["Job"],
     role: "Righteous Sufferer",
