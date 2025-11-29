@@ -1,6 +1,6 @@
-# 🙏 Biblele - Daily Bible Character Game
+# 📖 ScriptureGuess - Daily Bible Character Challenge
 
-Guess the Bible character from progressive clues. A new puzzle every day!
+Guess the Bible character from 6 progressive clues. A new puzzle every day!
 
 ## Features
 

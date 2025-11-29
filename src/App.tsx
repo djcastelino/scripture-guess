@@ -149,7 +149,7 @@ function App() {
     return (
       <div className="loading-screen">
         <div className="spinner"></div>
-        <p>Loading Biblele...</p>
+        <p>Loading ScriptureGuess...</p>
       </div>
     );
   }

@@ -10,9 +10,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Biblele - Daily Bible Challenge',
-        short_name: 'Biblele',
-        description: 'Guess Bible characters, places, and events from progressive clues. A new challenge every day!',
+        name: 'ScriptureGuess - Daily Bible Character Challenge',
+        short_name: 'ScriptureGuess',
+        description: 'Guess Bible characters from 6 progressive clues. A new challenge every day!',
         theme_color: '#f6a04d',
         background_color: '#ffffff',
         display: 'standalone',
