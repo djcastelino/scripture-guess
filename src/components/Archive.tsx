@@ -19,7 +19,7 @@ export default function Archive({ isOpen, onClose, onSelectPuzzle }: ArchiveProp
 
   const completedPuzzles = getCompletedPuzzles();
 
-  // Generate list of all available puzzles (last 50 days + today)
+  // Generate list of all available puzzles (only PAST puzzles, not future!)
   const generatePuzzleList = () => {
     const puzzles: Array<{ number: number; character: Character; completed?: { solved: boolean; guesses: number } }> = [];
     const today = new Date();
@@ -27,7 +27,8 @@ export default function Archive({ isOpen, onClose, onSelectPuzzle }: ArchiveProp
     // Get today's puzzle number (days since epoch % 50)
     const todayPuzzleNumber = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
     
-    // Generate last 50 puzzles (all characters available!)
+    // Only show today and PAST puzzles (not future ones!)
+    // Start from today (i=0) and go backwards 49 days (total 50 puzzles)
     for (let i = 0; i < 50; i++) {
       const puzzleNumber = todayPuzzleNumber - i;
       const date = new Date(puzzleNumber * 24 * 60 * 60 * 1000);
@@ -76,10 +77,10 @@ export default function Archive({ isOpen, onClose, onSelectPuzzle }: ArchiveProp
               onClick={() => handlePuzzleClick(puzzle)}
             >
               <div className="archive-item-number">
-                {index === 0 ? '📅 Today' : `#${puzzle.number}`}
+                {index === 0 ? '📅 Today' : `Day ${index}`}
               </div>
               <div className="archive-item-name">
-                {puzzle.completed ? puzzle.character.name : '???'}
+                {puzzle.completed ? puzzle.character.name : 'Mystery Character'}
               </div>
               <div className="archive-item-status">
                 {puzzle.number === todayPuzzleNumber ? (
