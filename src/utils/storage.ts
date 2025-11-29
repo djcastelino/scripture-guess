@@ -96,6 +96,6 @@ export function generateShareText(isWon: boolean, guesses: string[], puzzleNumbe
     if ((i + 1) % 3 === 0 && i < 5) grid += '\n';
   }
   
-  return `ScriptureGuess #${puzzleNumber} ${result}\n\n${grid}\n\nGuess the Bible character! 📖\nPlay daily at: scriptureguess.com`;
+  return `ScriptureGuess #${puzzleNumber} ${result}\n\n${grid}\n\nDaily Bible challenge! 📖\nPlay at: scriptureguess.com`;
 }
 

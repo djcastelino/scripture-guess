@@ -1,6 +1,6 @@
-# 📖 ScriptureGuess - Daily Bible Character Challenge
+# 📖 ScriptureGuess - Daily Bible Challenge
 
-Guess the Bible character from 6 progressive clues. A new puzzle every day!
+Guess Bible characters, events, and more from 6 progressive clues. A new puzzle every day!
 
 ## Features
 

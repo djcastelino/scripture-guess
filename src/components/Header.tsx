@@ -11,7 +11,7 @@ export default function Header() {
           <h1 className="title">
             SCRIPTURE GUESS
           </h1>
-          <p className="subtitle">Daily Bible Character Challenge</p>
+          <p className="subtitle">Daily Bible Challenge</p>
           {stats.currentStreak > 0 && (
             <div className="streak">
               🔥 {stats.currentStreak} day streak
