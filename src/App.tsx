@@ -10,6 +10,7 @@ import GuessList from './components/GuessList';
 import GameOver from './components/GameOver';
 import TestMode from './components/TestMode';
 import Stats from './components/Stats';
+import Archive from './components/Archive';
 import './App.css';
 
 const MAX_GUESSES = 6;
@@ -29,6 +30,9 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [testMode, setTestMode] = useState(false);
   const [showStats, setShowStats] = useState(false);
+  const [showArchive, setShowArchive] = useState(false);
+  const [archiveMode, setArchiveMode] = useState(false);
+  const [archivePuzzleNumber, setArchivePuzzleNumber] = useState<number | null>(null);
 
   useEffect(() => {
     // Initialize Google Analytics
@@ -106,7 +110,7 @@ function App() {
       isWon: isCorrect,
     };
 
-    if (isComplete && !testMode) {
+    if (isComplete && !testMode && !archiveMode) {
       updateStats(isCorrect, newGuesses.length);
       
       // Track game completion
@@ -119,8 +123,18 @@ function App() {
       newState.gamesWon = stats.gamesWon || 0;
     }
 
+    // Save archive puzzle completion (doesn't affect stats/streak)
+    if (isComplete && archiveMode && archivePuzzleNumber) {
+      const archiveData = JSON.parse(localStorage.getItem('scriptureguess-archive') || '{}');
+      archiveData[archivePuzzleNumber] = {
+        solved: isCorrect,
+        guesses: newGuesses.length
+      };
+      localStorage.setItem('scriptureguess-archive', JSON.stringify(archiveData));
+    }
+
     setGameState(newState);
-    if (!testMode) {
+    if (!testMode && !archiveMode) {
       saveGameState(newState);
     }
   }
@@ -203,7 +217,7 @@ function App() {
           isWon={gameState.isWon}
         />
 
-        {gameState.isComplete && (
+        {gameState.isComplete && !archiveMode && (
           <GameOver
             isWon={gameState.isWon}
             character={gameState.targetCharacter}
@@ -211,7 +225,24 @@ function App() {
             puzzleNumber={getPuzzleNumber()}
             guesses={gameState.guesses}
             onStatsClick={() => setShowStats(true)}
+            onArchiveClick={() => setShowArchive(true)}
           />
+        )}
+
+        {gameState.isComplete && archiveMode && (
+          <div className="archive-game-complete">
+            <p>✅ Archive puzzle complete! (Doesn't affect streak)</p>
+            <button onClick={() => {
+              setArchiveMode(false);
+              setArchivePuzzleNumber(null);
+              initGame();
+            }} className="back-to-today">
+              ← Back to Today's Puzzle
+            </button>
+            <button onClick={() => setShowArchive(true)} className="browse-archive">
+              📚 Browse More Puzzles
+            </button>
+          </div>
         )}
       </main>
 
@@ -226,6 +257,23 @@ function App() {
       <Stats 
         isOpen={showStats}
         onClose={() => setShowStats(false)}
+      />
+
+      <Archive
+        isOpen={showArchive}
+        onClose={() => setShowArchive(false)}
+        onSelectPuzzle={(character, puzzleNumber) => {
+          setShowArchive(false);
+          setArchiveMode(true);
+          setArchivePuzzleNumber(puzzleNumber);
+          setGameState({
+            ...gameState,
+            targetCharacter: character,
+            guesses: [],
+            isComplete: false,
+            isWon: false,
+          });
+        }}
       />
     </div>
   );
