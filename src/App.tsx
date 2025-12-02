@@ -29,6 +29,7 @@ function App() {
   });
   const [loading, setLoading] = useState(true);
   const [testMode, setTestMode] = useState(false);
+  const [showTestGrid, setShowTestGrid] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [showArchive, setShowArchive] = useState(false);
   const [archiveMode, setArchiveMode] = useState(false);
@@ -39,7 +40,15 @@ function App() {
     initGA();
     trackPageView('/');
     
-    initGame();
+    // Check for test mode URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('test') === 'true') {
+      setTestMode(true);
+      setShowTestGrid(true);
+      setLoading(false);
+    } else {
+      initGame();
+    }
   }, []);
 
   function initGame() {
@@ -148,7 +157,6 @@ function App() {
   }
 
   function handleTestCharacter(character: Character) {
-    setTestMode(true);
     const newState: GameState = {
       ...gameState,
       targetCharacter: character,
@@ -157,6 +165,7 @@ function App() {
       isWon: false,
     };
     setGameState(newState);
+    setLoading(false);
   }
 
   if (loading) {
@@ -165,6 +174,18 @@ function App() {
         <div className="spinner"></div>
         <p>Loading ScriptureGuess...</p>
       </div>
+    );
+  }
+
+  if (showTestGrid) {
+    return (
+      <TestMode 
+        onSelectCharacter={(character) => {
+          setShowTestGrid(false);
+          handleTestCharacter(character);
+        }}
+        currentCharacterId={gameState.targetCharacter?.id || null}
+      />
     );
   }
 
@@ -192,7 +213,14 @@ function App() {
         {testMode && (
           <div className="test-mode-banner">
             🧪 Test Mode Active - Stats won't be saved
-            <button onClick={() => { setTestMode(false); initGame(); }} className="exit-test">
+            <button onClick={() => setShowTestGrid(true)} className="back-to-grid">
+              ← Back to Grid
+            </button>
+            <button onClick={() => { 
+              setTestMode(false); 
+              setShowTestGrid(false);
+              initGame(); 
+            }} className="exit-test">
               Exit Test Mode
             </button>
           </div>
@@ -245,14 +273,6 @@ function App() {
           </div>
         )}
       </main>
-
-      {/* Test Mode - hidden in production, only shows if ?test=true in URL */}
-      {new URLSearchParams(window.location.search).get('test') === 'true' && (
-        <TestMode 
-          onSelectCharacter={handleTestCharacter}
-          currentCharacterId={gameState.targetCharacter?.id || null}
-        />
-      )}
 
       <Stats 
         isOpen={showStats}
