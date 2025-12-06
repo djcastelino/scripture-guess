@@ -4,6 +4,7 @@ import { getDailyCharacter } from './data/characters';
 import { loadGameState, saveGameState, isNewDay, updateStats } from './utils/storage';
 import { initGA, trackPageView, trackGameStart, trackGameComplete, trackGuess, trackCharacterView } from './utils/analytics';
 import Header from './components/Header';
+import CharacterImage from './components/CharacterImage';
 import ClueDisplay from './components/ClueDisplay';
 import GuessInput from './components/GuessInput';
 import GuessList from './components/GuessList';
@@ -225,6 +226,13 @@ function App() {
             </button>
           </div>
         )}
+
+        <CharacterImage
+          imageUrl={gameState.targetCharacter?.imageUrl}
+          wrongGuesses={gameState.guesses.length - (gameState.isWon ? 1 : 0)}
+          isComplete={gameState.isComplete}
+          characterName={gameState.targetCharacter?.name || ''}
+        />
 
         <ClueDisplay 
           character={gameState.targetCharacter} 

@@ -7,6 +7,7 @@ export interface Character {
   role: string;
   famousFor: string;
   difficulty: "easy" | "medium" | "hard";
+  imageUrl?: string; // Optional character portrait image
 }
 
 export interface GameState {

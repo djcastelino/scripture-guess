@@ -17,7 +17,8 @@ export const CHARACTERS: Character[] = [
     ],
     books: ["Exodus", "Numbers", "Deuteronomy"],
     role: "Prophet & Leader",
-    famousFor: "Led the Exodus from Egypt and received the Ten Commandments"
+    famousFor: "Led the Exodus from Egypt and received the Ten Commandments",
+    imageUrl: "https://images.unsplash.com/photo-1579403124614-197f69d8187b?w=400&h=400&fit=crop"
   },
   {
     id: 2,
@@ -34,7 +35,8 @@ export const CHARACTERS: Character[] = [
     ],
     books: ["1 Samuel", "2 Samuel", "1 Kings", "Psalms"],
     role: "King & Psalmist",
-    famousFor: "Defeated Goliath and became Israel's greatest king"
+    famousFor: "Defeated Goliath and became Israel's greatest king",
+    imageUrl: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=400&h=400&fit=crop"
   },
   {
     id: 3,
@@ -51,7 +53,8 @@ export const CHARACTERS: Character[] = [
     ],
     books: ["Genesis"],
     role: "Patriarch",
-    famousFor: "Built the ark and survived the great flood"
+    famousFor: "Built the ark and survived the great flood",
+    imageUrl: "https://images.unsplash.com/photo-1516937941344-00b4e0337589?w=400&h=400&fit=crop"
   },
   {
     id: 4,
